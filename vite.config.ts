@@ -10,16 +10,23 @@ const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    // DO NOT REMOVE
-    createIconImportProxy() as PluginOption,
-    sparkPlugin() as PluginOption,
-  ],
-  resolve: {
-    alias: {
-      '@': resolve(projectRoot, 'src')
-    }
-  },
+    plugins: [
+        react(),
+        tailwindcss(),
+        // DO NOT REMOVE
+        createIconImportProxy() as PluginOption,
+        sparkPlugin() as PluginOption,
+    ],
+    resolve: {
+        alias: {
+            '@': resolve(projectRoot, 'src')
+        }
+    },
+    test: {
+        globals: true,
+        environment: 'happy-dom',
+        setupFiles: './src/setupTests.ts',
+        reporters: ['default', 'junit'],
+        outputFile: 'test-results.xml',
+    },
 });
