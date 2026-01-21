@@ -23,9 +23,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          RUN_ID=$(gh run list --workflow=build.yml --branch=main --status=success --limit=1 --json databaseId --jq '.[0].databaseId')
+          RUN_ID=$(gh run list --workflow=build.yml --branch=main --status=success --limit=1 --json databaseId --jq '.[0].databaseId' --repo ${{ github.repository }})
           
-          gh run download --name dist-files --dir dist --run-id $RUN_ID
+          gh run download --name dist-files --dir dist --run-id $RUN_ID --repo ${{ github.repository }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
