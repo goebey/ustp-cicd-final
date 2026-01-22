@@ -4,11 +4,12 @@
 [![Publish Status](https://github.com/goebey/ustp-cicd-final/actions/workflows/publish.yml/badge.svg)](https://github.com/goebey/ustp-cicd-final/actions/workflows/publish.yml)
 [![Release Status](https://github.com/goebey/ustp-cicd-final/actions/workflows/release.yml/badge.svg)](https://github.com/goebey/ustp-cicd-final/actions/workflows/release.yml)
 
+vitest
 
 ## Live Demo
 **[Click here to view the deployed application](https://goebey.github.io/ustp-cicd-final/)**
 
-## Local Development
+## Local Delopment
 ### Prerequisites
 * Node.js (v20 recommended)
 * npm
