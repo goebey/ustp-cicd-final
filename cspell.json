@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "vscode",
+    "ustp",
+    "cicd",
+    "vitest",
+    "tailwindcss",
+    "tetris",
+    "opensource"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "package-lock.json"
+  ]
+}
