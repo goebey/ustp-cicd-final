@@ -18,28 +18,7 @@ import {
   getDropSpeed,
   Cell,
   Tetromino,
-} from '@/lib/tetris';
 
-type GameState = 'idle' | 'playing' | 'paused' | 'gameOver';
-
-function App() {
-  const [board, setBoard] = useState<Cell[][]>(createEmptyBoard());
-  const [currentPiece, setCurrentPiece] = useState<Tetromino | null>(null);
-  const [nextPiece, setNextPiece] = useState<Tetromino | null>(null);
-  const [gameState, setGameState] = useState<GameState>('idle');
-  const [score, setScore] = useState(0);
-  const [totalLines, setTotalLines] = useState(0);
-  const [level, setLevel] = useState(1);
-  const [highScore, setHighScore] = useKV<number>('tetris-high-score', 0);
-
-  const gameLoopRef = useRef<number | null>(null);
-  const lastDropTimeRef = useRef<number>(0);
-
-  const spawnNewPiece = useCallback(() => {
-    const piece = nextPiece || getRandomTetromino();
-    const newNextPiece = getRandomTetromino();
-
-    if (checkCollision(board, piece)) {
       setGameState('gameOver');
       if (score > (highScore || 0)) {
         setHighScore(score);
